@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ultrasonographic Report</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/b698919f5a.js" crossorigin="anonymous"></script>  <script>
+    const { autocomplete } = window['@algolia/autocomplete-js'];
+  </script>
+  <style>
+    /* Ensure that Roboto is the font-family used throughout */
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-200 px-8 py-4">
+<div class="max-w-4xl mx-auto bg-white p-6 shadow-lg">
+  <div class="grid grid-cols-4 gap-4 mb-6">
+    <!-- Input fields for Patient, RG, Raça, Espécie, Sex, Idade, Tutor(a), Veterinário requisitante, Data -->
+    <div class="col-span-1">
+      <label class="block text-sm font-bold mb-2">Patient:</label>
+      <input type="text" class="w-full border-2 border-black px-2 py-1 text-sm">
+    </div>
+    <!-- Repeat the above structure for other fields -->
+
+    <!-- Description section -->
+    <div class="col-span-4">
+      <h2 class="text-xl font-bold mb-4">DESCRIÇÃO ULTRASSONOGRÁFICA ABDOMINAL</h2>
+      <div class="mb-4">
+        <label class="block text-sm font-bold mb-2">Suspeita: a esclarecer</label>
+        <input type="text" class="w-full border-2 border-black px-2 py-1 text-sm">
+      </div>
+    </div>
+  </div>
+
+  <!-- Start of the table -->
+  <div class="overflow-x-auto">
+    <table class="min-w-full divide-y divide-black border-2 border-black">
+      <caption>Description of the table</caption>
+
+      <thead>
+      <tr>
+        <th class="px-4 py-2 text-left text-sm font-bold">Estrutura</th>
+        <th class="px-4 py-2 text-left text-sm font-bold">Código</th> <!-- New column for codes -->
+        <th class="px-4 py-2 text-sm font-bold">Normal</th>
+        <th class="px-4 py-2 text-sm font-bold">Anormal</th>
+        <th class="px-4 py-2 text-sm font-bold">Não visualizada</th>
+        <th class="px-4 py-2 text-sm font-bold">Comentários</th>
+      </tr>
+      </thead>
+
+      <tbody id="tableBody" class="bg-white divide-y divide-black">
+      <!-- Rows for structures and codes will be populated dynamically here -->
+      </tbody>
+    </table>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
